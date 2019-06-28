@@ -27,7 +27,7 @@
         <a class="nav-link disabled" href="#">Disabled</a>
       </li> -->
       <li>
-        <button mat-button [matMenuTriggerFor]="animals">Multi Function</button>
+        <button mat-button [matMenuTriggerFor]="animals">Daily Task Report</button>
         <mat-menu #animals="matMenu">
           <!-- <button mat-menu-item [matMenuTriggerFor]="Functionality">Functionality</button> -->
           <button mat-menu-item [matMenuTriggerFor]="form">form</button>
@@ -40,7 +40,7 @@
         </mat-menu>
 
         <mat-menu #form="matMenu">
-          <button (click)="addmore()" mat-menu-item>addmore</button>
+          <button (click)="addmore()" mat-menu-item>Add Daily Task Repot</button>
         </mat-menu>
 
         <mat-menu #modal="matMenu">
