@@ -1,0 +1,100 @@
+<div style="height: 80vh;">
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
+        <i class="fa fa-bars" aria-hidden="true"></i>
+      </button>
+      <span>NavSoft</span>
+      <span class="menu-spacer"></span>
+      <div fxShow="true" fxHide.lt-md>
+        <button mat-button [matMenuTriggerFor]="animals">Multi Function</button>
+        <mat-menu #animals="matMenu">
+          <button mat-menu-item [matMenuTriggerFor]="Functionality">Functionality</button>
+          <button mat-menu-item [matMenuTriggerFor]="form">form</button>
+        </mat-menu>
+
+        <mat-menu #Functionality="matMenu">
+          <button mat-menu-item [matMenuTriggerFor]="modal">Angular Material Modal</button>
+          <button mat-menu-item [matMenuTriggerFor]="dataTableStatic">Data Tabel Static</button>
+          <button mat-menu-item [matMenuTriggerFor]="dataTableDynamic">DataTable Dynamic</button>
+        </mat-menu>
+
+        <mat-menu #form="matMenu">
+          <button (click)="addmore()" mat-menu-item>addmore</button>
+        </mat-menu>
+
+        <mat-menu #modal="matMenu">
+          <button mat-menu-item>Pupup Static</button>
+          <button mat-menu-item>Pupup Global</button>
+        </mat-menu>
+
+        <mat-menu #dataTableStatic="matMenu">
+          <button mat-menu-item>datatable Static search</button>
+          <button mat-menu-item>datatable Static pagination</button>
+          <button mat-menu-item>datatable Static sort</button>
+        </mat-menu>
+
+        <mat-menu #dataTableDynamic="matMenu">
+          <button mat-menu-item>datatable dynamic search</button>
+          <button mat-menu-item>datatable dynamic sort</button>
+          <button mat-menu-item>datatable dynamic pagination</button>
+          <button mat-menu-item>datatable dynamic filter</button>
+          <button mat-menu-item disabled>datatable select row</button>
+        </mat-menu>
+
+
+        <a [routerLink]="['/login']" mat-button>login</a>
+        <a [routerLink]="['/signup']"  mat-button>Sign up</a>
+        <a [routerLink]="['/reset-password']" mat-button>Sign In</a>
+
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <mat-sidenav-container fxFlexFill>
+    <mat-sidenav #sidenav>
+      <mat-nav-list>
+        <button mat-button [matMenuTriggerFor]="animals">Animal index</button>
+        <mat-menu #animals="matMenu">
+          <button mat-menu-item [matMenuTriggerFor]="Functionality">Functionality</button>
+          <button mat-menu-item [matMenuTriggerFor]="form">form</button>
+        </mat-menu>
+
+        <mat-menu #Functionality="matMenu">
+          <button mat-menu-item [matMenuTriggerFor]="modal">Angular Material Modal</button>
+          <button mat-menu-item [matMenuTriggerFor]="dataTableStatic">Data Tabel Static</button>
+          <button mat-menu-item [matMenuTriggerFor]="dataTableDynamic">DataTable Dynamic</button>
+        </mat-menu>
+
+        <mat-menu #form="matMenu">
+          <button (click)="addmore()" mat-menu-item>addmore</button>
+        </mat-menu>
+
+        <mat-menu #modal="matMenu">
+          <button mat-menu-item>Pupup Static</button>
+          <button mat-menu-item>Pupup Global</button>
+        </mat-menu>
+
+        <mat-menu #dataTableStatic="matMenu">
+          <button mat-menu-item>datatable Static search</button>
+          <button mat-menu-item>datatable Static pagination</button>
+          <button mat-menu-item>datatable Static sort</button>
+        </mat-menu>
+
+        <mat-menu #dataTableDynamic="matMenu">
+          <button mat-menu-item>datatable dynamic search</button>
+          <button mat-menu-item>datatable dynamic sort</button>
+          <button mat-menu-item>datatable dynamic pagination</button>
+          <button mat-menu-item>datatable dynamic filter</button>
+          <button mat-menu-item disabled>datatable select row</button>
+        </mat-menu>
+
+
+        <a [routerLink]="['/login']" mat-button>login</a>
+        <a [routerLink]="['/signup']" mat-button>Sign up</a>
+        <a [routerLink]="['/reset-password']"  mat-button>Sign In</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content fxFlexFill>Main content</mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

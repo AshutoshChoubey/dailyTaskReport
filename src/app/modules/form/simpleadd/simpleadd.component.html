@@ -1,0 +1,92 @@
+<div class="container-fluid">
+  <form  [formGroup]="addmore">
+  <div class="card">
+    <div class="card-header text-center">Add Daily Task Report</div>
+    <div class="card-body">
+
+
+        <div class="row">
+          <div class="col-sm-4">
+               <mat-form-field appearance="outline">
+                  <mat-label>Title</mat-label>
+                  <input matInput  formControlName="title">
+                  <!-- <mat-error *ngIf="(f.title.dirty && f.title.invalid==true )">
+                    <span>Please Enter Valid Number</span>
+                  </mat-error> -->
+                </mat-form-field>
+          </div>
+          <div class="col-sm-3">
+             <mat-form-field appearance="outline">
+                      <mat-label>type</mat-label>
+                      <mat-select formControlName="type">
+                        <mat-option value="">
+                          None
+                        </mat-option>
+                         <mat-option value="1">
+                          Plan
+                        </mat-option>
+                        <mat-option value="1">
+                          Rutine
+                        </mat-option>
+                        <mat-option value="1">
+                          R&D
+                        </mat-option>
+                        <!-- <mat-option *ngFor="let parentPOSDepartment of parentPOSDepartment"
+                          [value]="parentPOSDepartment.id">
+                          {{parentPOSDepartment.text}}
+                        </mat-option> -->
+                      </mat-select>
+                    </mat-form-field>
+          </div>
+          <div class="col-sm-4">
+               <mat-form-field appearance="outline">
+                  <mat-label>descripition</mat-label>
+                  <textarea matInput  formControlName="descripition"></textarea>
+                </mat-form-field>
+          </div>
+          <!-- <div class="col-sm-1">
+            <button mat-mini-fab color="primary"><i class="fa fa-plus" aria-hidden="true"></i></button>
+          </div> -->
+        </div>
+        <!-- <form [formGroup]="addmore" #indentAddForm=ngForm  (ngSubmit)="onSubmit()" > -->
+                <div class="row">
+
+                  <div class="col-sm-12 table-responsive" formArrayName="itemRows">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th style="white-space: nowrap;padding-right: 4em;float:center"><span class="required-field"></span>Time Range </th>
+                          <th style="white-space: nowrap;padding-right: 4em;float:center">Learn </th>
+                          <th style="white-space: nowrap;padding-right: 4em;float:center">Descripition </th>
+                          <th style="white-space: nowrap;padding-right: 4em;float:center">Suggestion</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let itemrow of addmore.controls.itemRows['controls']; let i=index"  [formGroupName]="i">
+
+                          <td style="white-space: nowrap;"> <input readonly id="timeRange{{i}}" formControlName="timeRange" class="form-control"></td>
+                         <!-- <td style="white-space: nowrap;"> <input readonly id="learn{{i}}" formControlName="learn" class="form-control"></td> -->
+                          <!-- <td> <input formControlName="bf_stock" readonly id="bfStock{{i}}" class="form-control reset"></td> -->
+                           <td> <textarea id="learn{{i}}" formControlName="learn" class="form-control reset"></textarea></td>
+                          <td> <textarea formControlName="descripition" class="form-control reset"></textarea></td>
+                          <td> <textarea formControlName="suggestion" class="form-control reset"></textarea></td>
+                          <td> <button *ngIf="addmore.controls.itemRows.controls.length > 1" (click)="deleteRow(i)" class="btn btn-danger"><i class="fa fa-minus-circle" aria-hidden="true"></i></button></td>
+                        </tr>
+                      </tbody>
+                      <tfoot>
+                        <tr><td> <button type="button" (click)="addNewRow()" class="btn btn-primary"><i class="fa fa-plus-circle" aria-hidden="true"></i></button></td></tr>
+                      </tfoot>
+                    </table>
+                </div>
+
+              </div>
+              <!-- </form> -->
+
+    </div>
+    <div class="card-footer">
+       <button mat-raised-button color="primary">Primary</button>
+    </div>
+  </div>
+</form>
+
+</div>
