@@ -50,7 +50,6 @@
         </div>
         <!-- <form [formGroup]="addmore" #indentAddForm=ngForm  (ngSubmit)="onSubmit()" > -->
                 <div class="row">
-
                   <div class="col-sm-12 table-responsive" formArrayName="itemRows">
                     <table class="table">
                       <thead>
@@ -64,7 +63,7 @@
                       <tbody>
                         <tr *ngFor="let itemrow of addmore.controls.itemRows['controls']; let i=index"  [formGroupName]="i">
 
-                          <td style="white-space: nowrap;"> <input readonly id="timeRange{{i}}" formControlName="timeRange" class="form-control"></td>
+                          <td style="white-space: nowrap;"> <input  id="timeRange{{i}}" formControlName="timeRange" class="form-control"></td>
                          <!-- <td style="white-space: nowrap;"> <input readonly id="learn{{i}}" formControlName="learn" class="form-control"></td> -->
                           <!-- <td> <input formControlName="bf_stock" readonly id="bfStock{{i}}" class="form-control reset"></td> -->
                            <td> <textarea id="learn{{i}}" formControlName="learn" class="form-control reset"></textarea></td>
